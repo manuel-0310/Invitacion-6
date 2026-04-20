@@ -77,7 +77,7 @@ body {
     width: 100px;
     cursor: pointer;
     transition: opacity 1s, transform 1.5s;
-    filter: hue-rotate(195deg) saturate(0.8);
+    filter: hue-rotate(195deg) saturate(0.8) brightness(1.25);
 }
 .girar-desvanecer { transform: rotate(360deg) scale(1.2); opacity: 0; pointer-events: none; }
 
@@ -771,38 +771,23 @@ h2.section-title.white { color: #fff; }
     .sobres-img { width: 140px; }
     .map-embed iframe { height: 280px; }
 
-    /* ── Timeline cards 2×2 ── */
-    .timeline-scatter {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-        max-width: 380px;
-    }
-    .tl-s-item,
+    /* ── Timeline: lista vertical ── */
+    .timeline-scatter { max-width: 300px; gap: 6px; }
+
     .tl-s-item.tl-s-left,
     .tl-s-item.tl-s-right {
-        flex-direction: column;
-        align-items: center;
-        align-self: auto;
+        flex-direction: row;
+        align-self: center;
         width: 100%;
-        background: var(--blanco);
-        border-radius: 20px;
-        padding: 18px 10px 14px;
-        box-shadow: 0 3px 14px rgba(43,74,140,0.09);
-        gap: 10px;
+        justify-content: flex-start;
+        gap: 16px;
     }
-    /* Left items: DOM order is [text][img] — flip so img shows on top */
-    .tl-s-item.tl-s-left { flex-direction: column-reverse; }
+    /* Left items DOM = [text][img]: llevar img al frente */
+    .tl-s-item.tl-s-left .tl-s-img { order: -1; }
     .tl-s-text,
-    .tl-text-r { text-align: center !important; }
-    .tl-s-name { font-size: 1.35rem; }
-    .tl-s-img  { width: 68px; height: 68px; }
-    /* Hasta mañana: last item spans full width */
-    .tl-s-item:last-child {
-        grid-column: 1 / -1;
-        max-width: 180px;
-        margin: 0 auto;
-    }
+    .tl-text-r  { text-align: left !important; }
+    .tl-s-name  { font-size: 1.55rem; }
+    .tl-s-img   { width: 78px; height: 78px; }
 }
 
 a[href^="tel"] {
