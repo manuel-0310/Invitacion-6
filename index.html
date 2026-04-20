@@ -16,22 +16,36 @@
 
     <!-- ── INTRO OVERLAY ── -->
     <div id="intro-overlay">
-        <div class="intro-bg"></div>
-        <div class="escena">
-            <img src="fotos 5/sello.png" id="sello" alt="Sello de cera">
-            <img src="fotos 5/sobre-cerrado.PNG" id="sobre-cerrado" class="sobre" alt="Sobre cerrado">
-            <img src="fotos 5/sobre-abierto.PNG" id="sobre-abierto" class="sobre" alt="Sobre abierto">
-            <div class="tarjeta-intro" id="tarjeta-intro">
-                <span class="tarjeta-cat">🐾</span>
-                <h2>Tienes un lugar reservado</h2>
+        <div class="intro-layout">
+
+            <!-- Panel ilustración: móvil = pantalla completa, escritorio = izquierda -->
+            <div class="intro-panel-ilust">
+                <p class="intro-tag">¡Nos casamos!</p>
+                <h1 class="intro-title">Daniela<span class="intro-amp">&amp;</span>Diego</h1>
+                <img src="fotos 5/intro.png" class="intro-img" alt="Daniela y Diego con sus gatos">
+                <p class="intro-lugar">Hotel Estelar · Paipa, Boyacá</p>
+                <button id="btn-continuar" type="button">Abrir invitación</button>
             </div>
-            <button id="btn-continuar" type="button">Abrir invitación</button>
+
+            <!-- Panel sobre: solo escritorio, lado derecho -->
+            <div class="intro-panel-sobre">
+                <div class="escena">
+                    <img src="fotos 5/sello.png" id="sello" alt="Sello de cera">
+                    <img src="fotos 5/sobre-cerrado.PNG" id="sobre-cerrado" class="sobre" alt="Sobre cerrado">
+                    <img src="fotos 5/sobre-abierto.PNG" id="sobre-abierto" class="sobre" alt="Sobre abierto">
+                    <div class="tarjeta-intro" id="tarjeta-intro">
+                        <span class="tarjeta-cat">🐾</span>
+                        <h2>Tienes un lugar reservado</h2>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
     <div id="main-content" class="hidden">
 
-        <audio id="miMusica" loop>
+        <audio id="miMusica">
             <source src="fotos 5/cancion.mp3" type="audio/mpeg">
         </audio>
 
@@ -61,11 +75,18 @@
             </div>
         </header>
 
+        <!-- WAVE: crema → azul-pastel -->
+        <div class="wave-sep">
+            <svg viewBox="0 0 1200 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,35 C200,70 400,0 600,35 C800,70 1000,0 1200,35 L1200,70 L0,70 Z" fill="#E8EFF9"/>
+            </svg>
+        </div>
+
         <!-- ── 2. CUENTA REGRESIVA ── -->
         <section class="countdown-section">
             <div class="reveal">
-                <p class="seccion-label">faltan solo</p>
                 <h2 class="section-title">Cuenta regresiva</h2>
+                <p class="seccion-label">faltan solo</p>
             </div>
             <div id="timer" class="reveal reveal-delay-1">
                 <div class="time-box"><span id="days">00</span><label>Días</label></div>
@@ -76,10 +97,10 @@
             <p class="wedding-date reveal reveal-delay-2">12 · 09 · 2026</p>
         </section>
 
-        <!-- ── WAVE DIVIDER ── -->
-        <div class="wave-wrap">
+        <!-- WAVE: azul-pastel → blanco -->
+        <div class="wave-sep" style="background:#E8EFF9">
             <svg viewBox="0 0 1200 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0,35 C200,70 400,0 600,35 C800,70 1000,0 1200,35 L1200,70 L0,70 Z" fill="#E8EFF9"/>
+                <path d="M0,35 C200,0 400,70 600,35 C800,0 1000,70 1200,35 L1200,70 L0,70 Z" fill="#ffffff"/>
             </svg>
         </div>
 
@@ -90,81 +111,64 @@
                 <p class="section-sub">12 de Septiembre, 2026</p>
             </div>
 
-            <div class="timeline-list">
-                <div class="tl-item reveal">
-                    <div class="tl-icon"><img src="fotos 5/anillos.png" alt="Ceremonia"></div>
-                    <div class="tl-text">
-                        <span class="tl-hora">3:00 PM</span>
-                        <span class="tl-evento">Ceremonia</span>
+            <div class="timeline-scatter">
+
+                <!-- Ceremonia – izquierda -->
+                <div class="tl-s-item tl-s-left reveal">
+                    <div class="tl-s-text">
+                        <span class="tl-s-name">Ceremonia</span>
+                        <span class="tl-s-time">3:00 PM</span>
+                    </div>
+                    <img src="fotos 5/anillos.png" alt="Ceremonia" class="tl-s-img">
+                </div>
+
+                <!-- Cóctel – derecha -->
+                <div class="tl-s-item tl-s-right reveal reveal-delay-1">
+                    <img src="fotos 5/bebida.png" alt="Cóctel" class="tl-s-img">
+                    <div class="tl-s-text tl-text-r">
+                        <span class="tl-s-name">Cóctel</span>
+                        <span class="tl-s-time">4:00 PM</span>
                     </div>
                 </div>
-                <div class="tl-connector"></div>
-                <div class="tl-item reveal reveal-delay-1">
-                    <div class="tl-icon"><img src="fotos 5/bebida.png" alt="Cóctel"></div>
-                    <div class="tl-text">
-                        <span class="tl-hora">4:00 PM</span>
-                        <span class="tl-evento">Cóctel</span>
+
+                <!-- Recepción – izquierda -->
+                <div class="tl-s-item tl-s-left reveal reveal-delay-2">
+                    <div class="tl-s-text">
+                        <span class="tl-s-name">Recepción</span>
+                        <span class="tl-s-time">7:00 PM</span>
+                    </div>
+                    <img src="fotos 5/cena.PNG" alt="Recepción" class="tl-s-img">
+                </div>
+
+                <!-- Fiesta – derecha -->
+                <div class="tl-s-item tl-s-right reveal reveal-delay-3">
+                    <img src="fotos 5/fiesta.png" alt="Fiesta" class="tl-s-img">
+                    <div class="tl-s-text tl-text-r">
+                        <span class="tl-s-name">¡Fiesta!</span>
+                        <span class="tl-s-time">8:00 PM</span>
                     </div>
                 </div>
-                <div class="tl-connector"></div>
-                <div class="tl-item reveal reveal-delay-2">
-                    <div class="tl-icon"><img src="fotos 5/cena.PNG" alt="Recepción"></div>
-                    <div class="tl-text">
-                        <span class="tl-hora">7:00 PM</span>
-                        <span class="tl-evento">Recepción</span>
+
+                <!-- Hasta mañana – izquierda -->
+                <div class="tl-s-item tl-s-left reveal reveal-delay-3">
+                    <div class="tl-s-text">
+                        <span class="tl-s-name">Hasta mañana</span>
+                        <span class="tl-s-time">1:00 AM 🌙</span>
                     </div>
+                    <img src="fotos 5/finalizacion.png" alt="Finalización" class="tl-s-img">
                 </div>
-                <div class="tl-connector"></div>
-                <div class="tl-item reveal reveal-delay-3">
-                    <div class="tl-icon"><img src="fotos 5/fiesta.png" alt="Fiesta"></div>
-                    <div class="tl-text">
-                        <span class="tl-hora">8:00 PM</span>
-                        <span class="tl-evento">¡Fiesta!</span>
-                    </div>
-                </div>
-                <div class="tl-connector"></div>
-                <div class="tl-item reveal reveal-delay-3">
-                    <div class="tl-icon"><img src="fotos 5/finalizacion.png" alt="Finalización"></div>
-                    <div class="tl-text">
-                        <span class="tl-hora">1:00 AM</span>
-                        <span class="tl-evento">Hasta mañana 🌙</span>
-                    </div>
-                </div>
+
             </div>
         </section>
 
-        <!-- ── WAVE DIVIDER ── -->
-        <div class="wave-wrap wave-inv">
+        <!-- WAVE: blanco → crema -->
+        <div class="wave-sep" style="background:#ffffff">
             <svg viewBox="0 0 1200 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0,35 C200,0 400,70 600,35 C800,0 1000,70 1200,35 L1200,0 L0,0 Z" fill="#E8EFF9"/>
+                <path d="M0,35 C200,70 400,0 600,35 C800,70 1000,0 1200,35 L1200,70 L0,70 Z" fill="#FAF8F3"/>
             </svg>
         </div>
 
-        <!-- ── 4. LOS GATOS ── -->
-        <section class="cats-section">
-            <div class="reveal">
-                <h2 class="section-title">Y ellos también van</h2>
-                <p class="section-sub">En espíritu, claro 🐾</p>
-            </div>
-            <div class="cats-grid reveal reveal-delay-1">
-                <!-- ACTUALIZAR: Reemplazar con los nombres reales de los tres gatos -->
-                <div class="cat-card">
-                    <span class="cat-emoji">🐱</span>
-                    <p class="cat-name">El mandón</p>
-                </div>
-                <div class="cat-card">
-                    <span class="cat-emoji">😸</span>
-                    <p class="cat-name">El travieso</p>
-                </div>
-                <div class="cat-card">
-                    <span class="cat-emoji">😺</span>
-                    <p class="cat-name">El bebé</p>
-                </div>
-            </div>
-            <p class="cats-note reveal reveal-delay-2">Prometemos cuidarlos mientras sus papás se casan</p>
-        </section>
-
-        <!-- ── 5. CÓDIGO DE VESTIMENTA ── -->
+        <!-- ── 4. CÓDIGO DE VESTIMENTA ── -->
         <section class="dresscode-section">
             <div class="reveal">
                 <h2 class="section-title">Código de vestimenta</h2>
@@ -174,22 +178,34 @@
                 <div class="dresscode-image">
                     <img src="fotos 5/vestimenta.PNG" alt="Inspiración vestimenta">
                 </div>
-                <p class="color-reserve">🤍 El blanco y beige quedan reservados</p>
-                <a href="https://pin.it/2wCH37pOC" target="_blank" rel="noopener noreferrer" class="btn-inspiracion">Ver ideas de looks</a>
+                <p class="color-reserve">El blanco y beige quedan reservados</p>
             </div>
         </section>
 
-        <!-- ── 6. LLUVIA DE SOBRES ── -->
+        <!-- WAVE: crema → azul -->
+        <div class="wave-sep" style="background:#FAF8F3">
+            <svg viewBox="0 0 1200 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,35 C200,0 400,70 600,35 C800,0 1000,70 1200,35 L1200,70 L0,70 Z" fill="#2B4A8C"/>
+            </svg>
+        </div>
+
+        <!-- ── 5. LLUVIA DE SOBRES ── -->
         <section class="sobres-section">
             <div class="sobres-content reveal">
                 <img src="fotos 5/sobre-cerrado.PNG" alt="Sobre" class="sobres-img">
                 <h2 class="section-title white">Lluvia de Sobres</h2>
-                <p class="sobres-sub">(y también de cartas)</p>
                 <p class="sobres-texto">Si quieres, acompáñalo con un consejo: de la vida, del amor o de lo que te nazca del corazón. Nos encantaría guardarlo para siempre.</p>
             </div>
         </section>
 
-        <!-- ── 7. UBICACIÓN ── -->
+        <!-- WAVE: azul → crema -->
+        <div class="wave-sep" style="background:#2B4A8C">
+            <svg viewBox="0 0 1200 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,35 C200,70 400,0 600,35 C800,70 1000,0 1200,35 L1200,70 L0,70 Z" fill="#FAF8F3"/>
+            </svg>
+        </div>
+
+        <!-- ── 6. UBICACIÓN ── -->
         <section class="location-section">
             <div class="reveal">
                 <h2 class="section-title">¿Dónde nos vemos?</h2>
@@ -205,7 +221,14 @@
             </div>
         </section>
 
-        <!-- ── 8. RSVP ── -->
+        <!-- WAVE: crema → azul -->
+        <div class="wave-sep" style="background:#FAF8F3">
+            <svg viewBox="0 0 1200 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,35 C200,0 400,70 600,35 C800,0 1000,70 1200,35 L1200,70 L0,70 Z" fill="#2B4A8C"/>
+            </svg>
+        </div>
+
+        <!-- ── 7. RSVP ── -->
         <section class="rsvp-section">
             <div class="reveal">
                 <h2 class="section-title white">Confirma tu asistencia</h2>
@@ -255,7 +278,6 @@
                     <button type="submit" id="button-send" class="btn-primary">Confirmar</button>
                 </form>
             </div>
-            <img src="fotos 5/logo.png" alt="nombres" class="nombres reveal reveal-delay-2">
         </section>
 
         <!-- ── SCRIPTS ── -->

@@ -34,7 +34,14 @@ window.addEventListener("DOMContentLoaded", () => {
 
     if (!audio || !btn || !textoEl) return;
 
+    // Siempre desde el minuto 1:32 (92 segundos), y loop desde ahí
+    audio.addEventListener('ended', () => {
+        audio.currentTime = 92;
+        audio.play().catch(() => {});
+    });
+
     if (localStorage.getItem("reproducirMusica") === "true") {
+        audio.currentTime = 92;
         audio.play();
         btn.classList.add("sonando");
         textoEl.innerText = "Pausar";
@@ -43,6 +50,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     btn.addEventListener("click", () => {
         if (audio.paused) {
+            if (audio.currentTime < 92) audio.currentTime = 92;
             audio.play();
             btn.classList.add("sonando");
             textoEl.innerText = "Pausar";
@@ -60,6 +68,7 @@ function iniciarMusicaDesdeIntro() {
     const textoEl = document.getElementById("texto");
     if (!audio || !btn || !textoEl) return;
 
+    audio.currentTime = 92;
     audio.play().then(() => {
         btn.classList.add("sonando");
         textoEl.innerText = "Pausar";
