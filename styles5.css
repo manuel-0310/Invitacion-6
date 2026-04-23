@@ -1,10 +1,10 @@
 :root {
-    --crema:        #FAF8F3;
+    --crema:        #e9e3d9;
     --blanco:       #ffffff;
     --azul:         #7c263a;   /* vino tinto */
     --azul-medio:   #a33450;   /* vino medio */
     --azul-claro:   #c8a0a8;   /* vino claro */
-    --azul-pastel:  #f5e8eb;   /* vino pastel */
+    --azul-pastel:  #e9e3d9;   /* crema unificado */
     --amarillo:     #d4892c;   /* amarillo quemado */
     --amarillo-suave: #fef3e0; /* amarillo muy claro */
     --verde:        #5d7e6c;   /* verde elegante */
@@ -59,7 +59,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #dbb689;
+    background: #e9e3d9;
     transition: opacity 0.7s;
     overflow: hidden;
 }
@@ -300,7 +300,7 @@ h2.section-title {
     color: var(--azul);
     margin: 0 0 8px;
 }
-h2.section-title.white { color: #fff; }
+h2.section-title.white { color: var(--azul); }
 
 .section-sub {
     font-size: 0.85rem;
@@ -454,7 +454,7 @@ h2.section-title.white { color: #fff; }
 .tl-arrow-l { align-self: flex-start; margin-left: 5%; }
 
 /* ── DRESS CODE ── */
-.dresscode-section { background: var(--blanco); }
+.dresscode-section { background: var(--crema); }
 .dresscode-container { max-width: 560px; margin: 0 auto; }
 
 .dresscode-badge {
@@ -489,7 +489,7 @@ h2.section-title.white { color: #fff; }
 
 /* ── LLUVIA DE SOBRES ── */
 .sobres-section {
-    background: var(--azul);
+    background: var(--crema);
     padding: 80px var(--pad);
     position: relative;
     overflow: hidden;
@@ -516,7 +516,7 @@ h2.section-title.white { color: #fff; }
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.95;
-    color: rgba(255,255,255,0.87);
+    color: var(--texto);
     margin: 14px 0 0;
     text-align: center;
 }
@@ -583,7 +583,7 @@ h2.section-title.white { color: #fff; }
 
 /* ── RSVP ── */
 .rsvp-section {
-    background: var(--azul);
+    background: var(--crema);
     padding: 100px var(--pad);
     position: relative;
     overflow: hidden;
@@ -593,7 +593,7 @@ h2.section-title.white { color: #fff; }
     font-family: var(--font-body);
     font-size: 0.85rem;
     font-weight: 500;
-    color: rgba(255,255,255,0.45);
+    color: var(--azul-medio);
     letter-spacing: 2.5px;
     margin-bottom: 44px;
     margin-top: 6px;
@@ -628,7 +628,7 @@ h2.section-title.white { color: #fff; }
     font-size: 1rem;
     font-family: var(--font-body);
     font-weight: 400;
-    border: 2px solid var(--azul-pastel);
+    border: 2px solid var(--azul-claro);
     border-radius: 12px;
     background: var(--crema);
     transition: border-color 0.3s, box-shadow 0.3s;
@@ -662,7 +662,7 @@ h2.section-title.white { color: #fff; }
     -webkit-appearance: none;
     appearance: none;
     width: 20px; height: 20px; min-width: 20px;
-    border: 2px solid var(--azul-pastel);
+    border: 2px solid var(--azul-claro);
     border-radius: 50%;
     background: var(--blanco);
     cursor: pointer;
@@ -700,7 +700,7 @@ h2.section-title.white { color: #fff; }
 
 /* ── IMAGEN FINAL ── */
 .final-img-wrap {
-    background: var(--azul);
+    background: var(--crema);
     display: flex;
     justify-content: center;
     align-items: center;
