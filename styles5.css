@@ -76,8 +76,9 @@ body {
 
 #sello {
     position: absolute;
-    z-index: 10;
-    width: 100px;
+    top: 140px; 
+    z-index: 100;
+    width: 65px;
     cursor: pointer;
     transition: opacity 1s, transform 1.5s;
     filter: saturate(0.9) brightness(1.2);
@@ -505,10 +506,9 @@ h2.section-title.white { color: var(--azul); }
 }
 
 .sobres-img {
-    width: 170px;
-    margin-bottom: -20px;
+    width: 200px;
     margin-top: -20px;
-    opacity: 0.9;
+    opacity: 1;
 }
 
 .sobres-texto {
@@ -836,7 +836,7 @@ h2.section-title.white { color: var(--azul); }
     .time-box { padding: 16px 6px 14px; }
     .rsvp-container { padding: 28px 16px; }
     .hero h1 { font-size: 3.5rem; }
-    .sobres-img { width: 140px; }
+    .sobres-img { width: 85px; }
     .map-embed iframe { height: 280px; }
 
     /* Timeline — tamaños pequeños */
